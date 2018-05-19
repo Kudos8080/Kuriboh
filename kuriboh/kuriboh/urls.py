@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/',hello),
     path('time/',current_datetime),
-    path('polls/',include('polls.urls'))
+    path('polls/',include('polls.urls')),
+    path('register/',include('register.urls'))
     # path('time/plus/(\d{1,2})/',hours_ahead)
 ]
