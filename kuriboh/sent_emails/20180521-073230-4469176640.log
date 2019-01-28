@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: bin.xie.sg@gmail.com
+Date: Mon, 21 May 2018 07:32:30 -0000
+Message-ID: <152688795017.1162.5714643796267367861@Matthews-MacBook-Pro.local>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/register/reset/Mg/4wd-8bb070fe71da6a414137/
+
+Your username, in case you've forgotten: micah
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

@@ -1,0 +1,134 @@
+1. create project
+
+django-admin startproject mysite2
+
+|___ mysite2
+        |_____ manage.py
+        |
+        |_____ mysite2
+                  |______  __init__.py
+                  |______  settings.py
+                  |______  urls.py
+                  |______  wsgi.py
+
+
+django-admin startproject mysite2 .
+.
+|_____ manage.py
+|
+|_____ mysite2
+          |______  __init__.py
+          |______  settings.py
+          |______  urls.py
+          |______  wsgi.py
+
+
+2. run django project
+
+python manage.py runserver
+
+January 28, 2019 - 14:54:49
+Django version 2.0.3, using settings 'mysite2.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+
+3. create application
+
+python manage.py startapp blog
+
+
+|___ mysite2
+        |_____ manage.py
+        |
+        |_____ mysite2
+        |
+        |_____ db.sqlite3
+        |
+        |_____ blog
+                |______ views.py
+                |______ tests.py
+                |______ models.py
+                |______ migrations
+                |______ apps.py
+                |______ admin.py
+                |______ __init__.py
+
+
+4. manage.py
+
+django-admin startapp blog and python manage.py startapp blog are same.
+https://docs.djangoproject.com/en/2.1/ref/django-admin/
+
+
+(1)django-admin
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+
+(2) python manage.py
+
+[auth]
+    changepassword
+    createsuperuser
+
+[contenttypes]
+    remove_stale_contenttypes
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+
+[sessions]
+    clearsessions
+
+[staticfiles]
+    collectstatic
+    findstatic
+    runserver

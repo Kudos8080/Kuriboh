@@ -1,4 +1,4 @@
-"""kuriboh URL Configuration
+"""mysite2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -14,18 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
-from kuriboh.views import hello, current_datetime
-from django.views.generic.base import TemplateView
+from django.urls import path
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('admin/', admin.site.urls),
-    path('hello/',hello),
-    path('time/',current_datetime),
-    path('register/',include('register.urls')),
-    path('register/',include('django.contrib.auth.urls')),
-    path('polls/',include('polls.urls')),
-    #path('register/',include('register.urls')),
-    # path('time/plus/(\d{1,2})/',hours_ahead)
 ]
