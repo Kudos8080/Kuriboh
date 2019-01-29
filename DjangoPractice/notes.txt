@@ -132,3 +132,21 @@ Available subcommands:
     collectstatic
     findstatic
     runserver
+
+
+5. mysite2
+
+settings.py -- include the initial setup and project level configuration
+urls.py -- URL configuration file
+wsgi.py -- wsgi is short for web server gateway interface. 
+__pycache__ -- cache to store the compiling files
+
+6. blog
+
+
+
+
+
+
+
+
