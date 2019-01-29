@@ -143,6 +143,22 @@ __pycache__ -- cache to store the compiling files
 
 6. blog
 
+admin.py -- customised django admin tools
+apps.py -- application level configuration, usually used to set the app name
+migrations (directory) -- used to store the application database table instructions and 
+						  modify and create tables.
+models.py -- application data model
+tests.py -- used to write testing cases 
+views.py -- function views and class views
+
+
+
+
+
+
+
+
+
 
 
 
