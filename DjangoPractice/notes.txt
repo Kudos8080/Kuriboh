@@ -247,12 +247,115 @@ $ .dump blog_blogarticles
 $ select * from blog_blogarticles
 
 
+11. admin.py
+
+Code Snippets:
+
+from django.contrib import admin
+from .models import BlogArticles
+
+admin.site.register(BlogArticles)
+
+
+this code will add Blog Articles setup in admin website
+
+
+pip install pytz # timezone 
+
+
+12. HTTP
+
+Request/Response
+
+8 types of request:
+OPTIONS, HEAD, GET, POST, PUT, DELETE, TRACE and CONNECT
+
+
+GET: send request to specific server to get info
+POST: submit data or upload file to the server
+
+HTTP: port 80, clear text
+HTTPS: port 443, cipher text
+
+URL: Uniform/Universe Resource Locator
+
+URL:
+http or https:// ip address or domain name /
+
+get: ? para1=xx & para2=xx & para3=xx
+
+
+13. ORM
+
+ORM : Object-Relation Mapping (between models and database table mapping)
+
+$ python manage.py makemigrations
+$ python manage.py migrate
+
+
+$ python manage.py shell
+
+Python 3.6.1 |Anaconda 4.4.0 (x86_64)| (default, May 11 2017, 13:04:09) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.3.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: from django.contrib.auth.models import User
+
+In [2]: from blog.models import BlogArticles
+
+In [3]: user = User.objects.get(username="admin")
+
+In [4]: user.username
+Out[4]: 'admin'
+
+In [5]: user.id
+Out[5]: 1
+
+In [7]: type(user)
+Out[7]: django.contrib.auth.models.User
+
+In [8]: blogs = BlogArticles.objects.all()
+
+In [9]: blogs
+Out[9]: <QuerySet [<BlogArticles: Happy Chinese New Year>, <BlogArticles: You Raise Me up>, <BlogArticles: The Promise>]>
+
+In [10]: for blog in blogs:
+    ...:     print(blog.title)
+    ...:     
+Happy Chinese New Year
+You Raise Me up
+The Promise
 
 
 
+14. render()
+
+code snippets:
+
+from django.shortcuts import render
+from .models import BlogArticles
+
+# Create your views here.
+def blog_title(request):
+    blogs = BlogArticles.objects.all()
+    return render(request, "blog/titles.html", {"blogs":blogs})
 
 
+render() is used to apply data to specific template
 
+every appliaction should have its own template folder
+
+template directory structure:
+
+------ templates
+          |________ base.html
+          |________ blog
+                     |________ titles.html
 
 
 
