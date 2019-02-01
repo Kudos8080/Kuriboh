@@ -358,9 +358,25 @@ template directory structure:
                      |________ titles.html
 
 
+15. {% block name %}
+
+base.html:
+{% block name %}
+{% endblock %}
 
 
+blog/titles.html
+{% extends "base.html" %}
+{% block title %}blog titles{% endlock %}
 
+{% block content %}
+<div>
+</div>
+
+<div>
+...
+</div>
+{% endlock %}
 
 
 
