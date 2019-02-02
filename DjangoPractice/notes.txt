@@ -375,8 +375,22 @@ blog/titles.html
 
 <div>
 ...
+<ul>
+{% for blog in blogs %}
+    <li>{{ blog.title }}</li>
+{% endfor %}
+</ul>
+...
 </div>
 {% endlock %}
+
+
+16. mysite2 urls.py
+
+
+
+
+
 
 
 
