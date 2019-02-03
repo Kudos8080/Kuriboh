@@ -385,13 +385,50 @@ blog/titles.html
 {% endlock %}
 
 
-16. mysite2 urls.py
+16. urls.py
+
+mysite2/urls.py
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls', namespace='blog')),
+]
+
+blog/urls.py
+
+app_name = "blog"
+
+urlpatterns = [
+    path("", views.blog_title, name='blog_title'),
+    #path('<int:article_id>/', views.blog_article),
+    path('<int:article_id>/', views.blog_article, name='blog_article'),
+]
 
 
 
+17. get_object_or_404()
+
+When the object that requests dosen't exist, program will throw DoesNotExist 
+exception. As for this exception, you can use try...except.. and in except, you can use raise Http404() to handle. These operations are wrapped in 
+get_object_or_404().
+
+get_object_or_404(klass, *args, **kwargs)
+
+e.g
+article = get_object_or_404(BlogArticles, id=article_id)
 
 
+18. MVC or MTV
 
+MVC -- Xerox PARC -- Smalltalk
+
+MTV(Model - Template - Views)
+
+core features:
+1. Python
+2. DRY (Don't Repeat Yourself)
+3. Loose Coupling
+4. Rapid Development
 
 
 
