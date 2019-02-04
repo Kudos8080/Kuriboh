@@ -431,17 +431,90 @@ core features:
 4. Rapid Development
 
 
+19. customized template
+
+TEMPLATE DIRS and APP_DIRS:
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': False,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 
+STATIC FILES:
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+tree:
+(1) find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+(2) brew install tree
+
+mysite2/static$
 
 
+├── css
+│   ├── bootstrap-theme.css
+│   ├── bootstrap-theme.min.css
+│   ├── bootstrap.css
+│   ├── bootstrap.css.map
+│   ├── bootstrap.min.css
+│   ├── bootstrap.min.css.map
+│   ├── imagecrop.css
+│   └── mansory-style.css
+├── fonts
+│   ├── glyphicons-halflings-regular.eot
+│   ├── glyphicons-halflings-regular.svg
+│   ├── glyphicons-halflings-regular.ttf
+│   ├── glyphicons-halflings-regular.woff
+│   └── glyphicons-halflings-regular.woff2
+├── images
+│   ├── avatar.png
+│   ├── backlogo.png
+│   ├── book.jpg
+│   ├── logo.png
+│   └── newton.jpg
+├── js
+│   ├── bootstrap.js
+│   ├── bootstrap.min.js
+│   ├── cropbox-min.js
+│   ├── cropbox.js
+│   ├── csrf.js
+│   ├── jquery-1.11.1.min.js
+│   ├── jquery.js
+│   ├── json2.js
+│   ├── layer.js
+│   ├── mp.mansory.min.js
+│   ├── npm.js
+│   └── skin
+│       └── default
+│           ├── icon-ext.png
+│           ├── icon.png
+│           ├── layer.css
+│           ├── loading-0.gif
+│           ├── loading-1.gif
+│           └── loading-2.gif
+└── newton.jpg
 
 
+{% static %} insert static file in Django
+{% url 'blog:blog_title' %}
 
-
-
-
-
+avoid hardcode
 
 
 
