@@ -530,6 +530,20 @@ templates: (blog/content.html)
 contexts: ({"article":article, "publish":pub})
 
 
+variable label:
+{{ variable }}
+
+block label:
+{% for blog in blogs %}
+    <li><a href="{{blog.id}}">{{ blog.title }}</a></li>
+{% endfor %}
+
+{% command %}
+{% endname %}
+
+
+
+
 
 
 
