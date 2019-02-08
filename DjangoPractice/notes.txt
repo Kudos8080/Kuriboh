@@ -517,6 +517,9 @@ mysite2/static$
 avoid hardcode
 
 
+20. Django Path
+
+/anaconda/lib/python3.6/site-packages/django/contrib/admin/templates
 
 
 
