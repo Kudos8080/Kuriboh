@@ -522,6 +522,12 @@ avoid hardcode
 /anaconda/lib/python3.6/site-packages/django/contrib/admin/templates
 
 
+21. templates & contexts
+
+render(request, "blog/content.html", {"article":article, "publish":pub})
+
+templates: (blog/content.html)
+contexts: ({"article":article, "publish":pub})
 
 
 
