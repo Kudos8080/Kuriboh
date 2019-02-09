@@ -541,6 +541,77 @@ block label:
 {% command %}
 {% endname %}
 
+22. Form
+
+is_bound
+
+$ loginForm = LoginForm()
+$ loginForm.is_bound
+False
+
+$ dataLogin = {"username":"abcde", "password":"12345"}
+$ loginForm = LoginForm(dataLogin)
+$ loginForm.is_bound
+True
+
+$ loginForm.is_valid()
+
+dataLogin is correct (True) or not correct (False)
+
+$ loginForm.cleaned_data
+{"username":"abcde", "password":"12345"}
+
+
+23. INSTALLED_APPS
+
+django.contrib.auth
+authenticate() and login()
+
+after login(), django will call default session application to store user id in session 
+
+
+24. HttpRequest && HttpResponse
+
+request.GET and request.POST
+
+GET: query data
+POST: insert or update data
+      submit form data
+
+HttpResponse return a string
+HttpResponse("Wellcome You. You have been authenticated successfully")
+
+render return a html 
+render(request, "account/login.html", {"form":login_form})
+
+
+24. login.html
+
+{% csrf_token %}
+
+CSRF: cross-site request forgery
+
+{% csrf_token %} must be added in form to avoid attack from CSRF
+
+
+
+{{ form.as_p }}
+transfer the form to <p> label, similarly as_ul and as_table
+
+25. default admin 
+
+/anaconda/lib/python3.6/site-packages/django/contrib/auth
+
+
+
+
+
+
+
+
+
+
+
 
 
 
