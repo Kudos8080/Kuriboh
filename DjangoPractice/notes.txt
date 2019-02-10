@@ -602,9 +602,40 @@ transfer the form to <p> label, similarly as_ul and as_table
 
 /anaconda/lib/python3.6/site-packages/django/contrib/auth
 
+/anaconda/lib/python3.6/site-packages/django/contrib/auth/views.py
+
+26. python代码`if not x:` 和`if x is not None:`和`if not x is None:`
+
+在python中 None,  False, 空字符串"", 0, 空列表[], 空字典{}, 空元组()都相当于False ，即：
+
+not None == not False == not '' == not 0 == not [] == not {} == not ()
+
+因此在使用列表的时候，如果你想区分x==[]和x==None两种情况的话, 此时`if not x:`将会出现问题：
 
 
+>>> x = []
+>>> y = None
+>>> 
+>>> x is None
+False
+>>> y is None
+True
+>>> 
+>>> 
+>>> not x
+True
+>>> not y
+True
+>>> 
+>>> 
+>>> not x is None
+>>> True
+>>> not y is None
+False
+>>>
 
+
+27. 
 
 
 
