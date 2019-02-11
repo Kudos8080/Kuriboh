@@ -635,11 +635,37 @@ False
 >>>
 
 
-27. 
+27. HttpRequest Attribute
+
+path: return one string
+GET: return dict object
+POST: return dict object
+REQUEST: dict object
+FILES: dict object
+COOKIES: dict
+META: dict, HTTP header
+user: user object
 
 
 
+HttpResponse:
+mainly to return string 
+response = HttpResponse("Here is the text of the web page.")
 
+
+
+28. forms.Form & forms.ModelForm
+
+
+Form won't change the databases
+ModelForm will insert or update databases
+
+Meta is internal class and will specify the table and fields
+
+e.g
+class Meta:
+    model = User
+    fields = ("username", "email")
 
 
 
