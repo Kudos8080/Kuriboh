@@ -668,6 +668,19 @@ class Meta:
     fields = ("username", "email")
 
 
+29. Models
+
+account/models.py
+
+class UserProfile(models.Model):     #create table account_userprofile
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)   #User and UserProfile One to One Mapping
+    birth = models.DateField(blank=True, null=True)
+    phone = models.CharField(max_length=20, null=True)
+
+$ python manage.py makemigrations account
+$ python manage.py migrate account
+
+
 
 
 
