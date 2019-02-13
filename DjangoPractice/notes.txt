@@ -681,6 +681,15 @@ $ python manage.py makemigrations account
 $ python manage.py migrate account
 
 
+django.db.models
+title = models.CharField(max_length=300)
+
+CharField - string, must specify the length
+TextField - string, unlimited length
+EmailField, URLField - inherited from CharField, will automatically verify this field
+FieldField - used to upload file
+DateField, DateTimeField - store time. auto_now_add = True
+
 
 
 
