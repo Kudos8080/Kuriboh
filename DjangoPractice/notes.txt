@@ -691,9 +691,19 @@ FieldField - used to upload file
 DateField, DateTimeField - store time. auto_now_add = True
 
 
+30. 
+
+django-registration
+https://django-registration.readthedocs.io/en/3.0/
+
+django social auth (socail account registration)
+https://github.com/omab/django-social-auth
 
 
+post_change_redirect = reverse('password_change_done')
+post_change_redirect = reverse('account:password_change_done')
 
+path('password-change/', auth_views.password_change, {"post_change_redirect":"/account/password-change-done"}, name="password_change"),
 
 
 
