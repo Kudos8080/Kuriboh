@@ -693,6 +693,8 @@ DateField, DateTimeField - store time. auto_now_add = True
 
 30. 
 
+/anaconda/lib/python3.6/site-packages/django/contrib/auth/views.py
+
 django-registration
 https://django-registration.readthedocs.io/en/3.0/
 
