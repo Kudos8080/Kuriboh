@@ -709,6 +709,17 @@ path('password-change/', auth_views.password_change, {"post_change_redirect":"/a
 
 
 
+31.
+
+django 1 and 2, password reset
+
+python 1.0 
+
+当 Django 项目有多个 app 的时候，把所有视图函数都放到项目文件夹的 urls.py 来管理将会是一件比较烦杂的事情，我们可以在各自 app 的文件夹中创建 urls.py 文件来管理该 app 下的 url 和 视图函数的映射关系。
+
+urlpatterns = [
+    url(r'^pwd_reset/', include("password_reset.urls", namespace='pwd_reset', app_name='pwd_reset')),
+]
 
 
 
