@@ -722,6 +722,25 @@ urlpatterns = [
 ]
 
 
+django 2.0
+https://docs.djangoproject.com/en/2.1/ref/urls/
+
+
+32.
+
+Django Password Algorithm
+
+MD5
+PBKDF2
+Bcrypt
+
+
+
+
+
+
+
+
 
 
 
