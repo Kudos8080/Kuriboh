@@ -735,6 +735,11 @@ PBKDF2
 Bcrypt
 
 
+33. models
+
+python manage.py makemigrations account
+python manage.py migrate
+
 
 
 
