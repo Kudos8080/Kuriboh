@@ -740,6 +740,17 @@ Bcrypt
 python manage.py makemigrations account
 python manage.py migrate
 
+34 django decorator function
+
+@login_required(login_url='/account/login/')
+def myself(request):
+    ...
+    ...
+    ...
+
+
+
+
 
 
 

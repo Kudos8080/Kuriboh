@@ -19,5 +19,6 @@ urlpatterns = [
     path('password-reset-done/', auth_views.password_reset_done, {"template_name":"account/password_reset_done.html"}, name="password_reset_done"),
     path('password-reset-confirm/(?P<uidb64>[-\w]+)(?P<token>[-\w]+)/$', auth_views.password_reset_confirm, {"template_name":"account/password_reset_confirm.html", "post_reset_redirect":"/account/password-reset-complete"}, name="password_reset_confirm"),
     path('password-reset-complete/', auth_views.password_reset_complete, {"template_name":"account/password_reset_complete.html"}, name="password_reset_complete"),
+    path('my-infomation/', views.myself, name="my-infomation"),
 ]
 

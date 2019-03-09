@@ -13,7 +13,7 @@ class UserProfile(models.Model):
 
 
 class UserInfo(models.Model):
-	user = models.OneToOneField(User, unique=True)
+	user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
 	school = models.CharField(max_length=100, blank=True)
 	company = models.CharField(max_length=100, blank=True)
 	profession = models.CharField(max_length=100, blank=True)
