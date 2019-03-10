@@ -748,6 +748,14 @@ def myself(request):
     ...
     ...
 
+35. header.html my_information issue
+
+Exception Type: DoesNotExist
+Exception Value:    
+UserInfo matching query does not exist.
+
+
+
 
 
 
