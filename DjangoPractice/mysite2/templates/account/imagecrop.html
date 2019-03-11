@@ -19,10 +19,11 @@
 	<div class="cropped"></div>
 </div>
 
-<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>js
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/cropbox-min.js' %}"></script>
-
+<script type="text/javascript" src="{% static 'js/csrf.js' %}"></script>
 <script type="text/javascript">
+	
 $(window).load(function() {
 	var options = 
 	{
@@ -41,33 +42,43 @@ $(window).load(function() {
 			cropper = $('.imageBox').cropbox(options);
 			getImg();
 		}
+
 		reader.readAsDataURL(this.files[0]);
 		this.files = [];
 		//getImg();
 	})
 
-	$('#btnCrop').on('click', function(){
-		alert("picture uploaded")
+	$('#btnCrop').on('click', function() {
+		//alert("pic uploaded");
+		$.ajax({
+			url: '{% url "account:my_image" %}',
+			type: 'POST',
+			data: {"img": img},
+			success: function(e){
+				location.href= "{% url 'account:my_information' %}"
+			},
+		});
 	})
 
 	function getImg(){
 		img = cropper.getDataURL();
 		$('.cropped').html('');
-		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:180px;margin-top:4px;border-radius:180px;box-shadow:0px 0px 12px #7E7E7E;"><p>180px*180px</p>');
-		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:128px;margin-top:4px;border-radius:128px;box-shadow:0px 0px 12px #7E7E7E;"><p>128px*128px</p>');
-		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:64px;margin-top:4px;border-radius:64px;box-shadow:0px 0px 12px #7E7E7E;"><p>64px*64px</p>');
+		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:180px;margin-top:4px;border-radius:180px;box-shadow:0px 0px 12px#7E7E7E;"><p>180px*180px</p>');
+		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:128px; margin-top:4px; border-radius:128px; box-shadow:0px 0px 12px #7E7E7E;"> <p>128px*128px</p>');
+		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:64px; margin-top:4px; border-radius:64px; box-shadow:0px 0px 12px #7E7E7E;" > <p>64px*64px</p>');
+    }
+    
+	$(".imageBox").on("mouseup",function(){
+		getImg();
+	})
+    
+    $('#btnZoomIn').on('click', function(){
+		cropper.zoomIn();
+	})
 
-		$(".imageBox").on("mouseup",function(){
-			getImg();
-		})
-		
-		$('#btnZoomIn').on('click', function(){
-			cropper.zoomIn();
-		})
+    $('#btnZoomOut').on('click', function(){
+		cropper.zoomOut();
+	})
 
-		$('#btnZoomOut').on('click', function(){
-			cropper.zoomOut();
-		})
-	}
 });
 </script>
