@@ -755,6 +755,11 @@ Exception Value:
 UserInfo matching query does not exist.
 
 
+36. JQuery
+
+#id         $("#lastname")      id="lastname" 的元素
+.class      $(".intro")         所有 class="intro" 的元素
+element     $("p")              所有 <p> 元素
 
 
 
